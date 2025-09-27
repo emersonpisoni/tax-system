@@ -1,10 +1,199 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Select from "../components/Select.astro";
+import "../styles/global.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const states = [
+  {
+    Ohio: [
+      {
+        taxRate: 0.058,
+        year: 2025,
+      },
+      {
+        taxRate: 0.0575,
+        year: 2024,
+      },
+      {
+        taxRate: 0.055,
+        year: 2023,
+      },
+      {
+        taxRate: 0.0525,
+        year: 2022,
+      },
+      {
+        taxRate: 0.05,
+        year: 2021,
+      },
+      {
+        taxRate: 0.0475,
+        year: 2020,
+      },
+    ],
+    California: [
+      {
+        taxRate: 0.0725,
+        year: 2025,
+      },
+      {
+        taxRate: 0.0725,
+        year: 2024,
+      },
+      {
+        taxRate: 0.0725,
+        year: 2023,
+      },
+      {
+        taxRate: 0.0725,
+        year: 2022,
+      },
+      {
+        taxRate: 0.0725,
+        year: 2021,
+      },
+      {
+        taxRate: 0.0725,
+        year: 2020,
+      },
+    ],
+    Texas: [
+      {
+        taxRate: 0.0625,
+        year: 2025,
+      },
+      {
+        taxRate: 0.0625,
+        year: 2024,
+      },
+      {
+        taxRate: 0.0625,
+        year: 2023,
+      },
+      {
+        taxRate: 0.0625,
+        year: 2022,
+      },
+      {
+        taxRate: 0.0625,
+        year: 2021,
+      },
+      {
+        taxRate: 0.0625,
+        year: 2020,
+      },
+    ],
+    "New York": [
+      {
+        taxRate: 0.04,
+        year: 2025,
+      },
+      {
+        taxRate: 0.04,
+        year: 2024,
+      },
+      {
+        taxRate: 0.04,
+        year: 2023,
+      },
+      {
+        taxRate: 0.04,
+        year: 2022,
+      },
+      {
+        taxRate: 0.04,
+        year: 2021,
+      },
+      {
+        taxRate: 0.04,
+        year: 2020,
+      },
+    ],
+    Florida: [
+      {
+        taxRate: 0.06,
+        year: 2025,
+      },
+      {
+        taxRate: 0.06,
+        year: 2024,
+      },
+      {
+        taxRate: 0.06,
+        year: 2023,
+      },
+      {
+        taxRate: 0.06,
+        year: 2022,
+      },
+      {
+        taxRate: 0.06,
+        year: 2021,
+      },
+      {
+        taxRate: 0.06,
+        year: 2020,
+      },
+    ],
+  },
+];
+
+const products = [
+  {
+    name: "apple",
+    price: 3.5,
+  },
+  {
+    name: "banana",
+    price: 2.0,
+  },
+  {
+    name: "orange",
+    price: 4.0,
+  },
+  {
+    name: "grape",
+    price: 5.0,
+  },
+  {
+    name: "mango",
+    price: 6.0,
+  },
+];
 ---
 
-<div id="container">
-  <a href="/tax">Go to tax page</a>
-</div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Tax System</title>
+  </head>
+  <body>
+    <h1>Tax System</h1>
+    <div class="select-container">
+      Product:
+      <Select
+        options={products.map((product) => ({
+          name: product.name,
+          value: product.price,
+        }))}
+      />
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: blanchedalmond;
+    height: 100vh;
+  }
+  .select-container {
+    background-color: white;
+    padding: 1rem;
+  }
+</style>
