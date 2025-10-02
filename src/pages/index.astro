@@ -2,163 +2,87 @@
 import Select from "../components/Select.astro";
 import "../styles/global.css";
 
-const states = [
-  {
-    Ohio: [
-      {
-        taxRate: 0.058,
-        year: 2025,
-      },
-      {
-        taxRate: 0.0575,
-        year: 2024,
-      },
-      {
-        taxRate: 0.055,
-        year: 2023,
-      },
-      {
-        taxRate: 0.0525,
-        year: 2022,
-      },
-      {
-        taxRate: 0.05,
-        year: 2021,
-      },
-      {
-        taxRate: 0.0475,
-        year: 2020,
-      },
-    ],
-    California: [
-      {
-        taxRate: 0.0725,
-        year: 2025,
-      },
-      {
-        taxRate: 0.0725,
-        year: 2024,
-      },
-      {
-        taxRate: 0.0725,
-        year: 2023,
-      },
-      {
-        taxRate: 0.0725,
-        year: 2022,
-      },
-      {
-        taxRate: 0.0725,
-        year: 2021,
-      },
-      {
-        taxRate: 0.0725,
-        year: 2020,
-      },
-    ],
-    Texas: [
-      {
-        taxRate: 0.0625,
-        year: 2025,
-      },
-      {
-        taxRate: 0.0625,
-        year: 2024,
-      },
-      {
-        taxRate: 0.0625,
-        year: 2023,
-      },
-      {
-        taxRate: 0.0625,
-        year: 2022,
-      },
-      {
-        taxRate: 0.0625,
-        year: 2021,
-      },
-      {
-        taxRate: 0.0625,
-        year: 2020,
-      },
-    ],
-    "New York": [
-      {
-        taxRate: 0.04,
-        year: 2025,
-      },
-      {
-        taxRate: 0.04,
-        year: 2024,
-      },
-      {
-        taxRate: 0.04,
-        year: 2023,
-      },
-      {
-        taxRate: 0.04,
-        year: 2022,
-      },
-      {
-        taxRate: 0.04,
-        year: 2021,
-      },
-      {
-        taxRate: 0.04,
-        year: 2020,
-      },
-    ],
-    Florida: [
-      {
-        taxRate: 0.06,
-        year: 2025,
-      },
-      {
-        taxRate: 0.06,
-        year: 2024,
-      },
-      {
-        taxRate: 0.06,
-        year: 2023,
-      },
-      {
-        taxRate: 0.06,
-        year: 2022,
-      },
-      {
-        taxRate: 0.06,
-        year: 2021,
-      },
-      {
-        taxRate: 0.06,
-        year: 2020,
-      },
-    ],
-  },
+class Product {
+  name: string;
+  price: number;
+
+  constructor(name: string, price: number) {
+    this.name = name;
+    this.price = price;
+  }
+}
+
+const apple = new Product("apple", 3.5);
+const banana = new Product("banana", 2.0);
+const orange = new Product("orange", 4.0);
+const grape = new Product("grape", 5.0);
+const mango = new Product("mango", 6.0);
+
+const products = [apple, banana, orange, grape, mango];
+
+class State {
+  name: string;
+  taxRates: TaxRate[];
+
+  constructor(name: string, taxRates: TaxRate[]) {
+    this.name = name;
+    this.taxRates = taxRates;
+  }
+}
+
+class TaxRate {
+  rate: number;
+  year: number;
+
+  constructor(rate: number, year: number) {
+    this.rate = rate;
+    this.year = year;
+  }
+}
+
+const ohioTaxRates = [
+  new TaxRate(0.058, 2025),
+  new TaxRate(0.0575, 2024),
+  new TaxRate(0.055, 2023),
+  new TaxRate(0.0525, 2022),
+  new TaxRate(0.05, 2021),
+  new TaxRate(0.0475, 2020),
 ];
 
-const products = [
-  {
-    name: "apple",
-    price: 3.5,
-  },
-  {
-    name: "banana",
-    price: 2.0,
-  },
-  {
-    name: "orange",
-    price: 4.0,
-  },
-  {
-    name: "grape",
-    price: 5.0,
-  },
-  {
-    name: "mango",
-    price: 6.0,
-  },
+const ohio = new State("Ohio", ohioTaxRates);
+
+const californiaTaxRates = [
+  new TaxRate(0.0725, 2025),
+  new TaxRate(0.0725, 2024),
+  new TaxRate(0.0725, 2023),
+  new TaxRate(0.0725, 2022),
+  new TaxRate(0.0725, 2021),
+  new TaxRate(0.0725, 2020),
 ];
+
+const california = new State("California", californiaTaxRates);
+
+const texasTaxRates = [
+  new TaxRate(0.0625, 2025),
+  new TaxRate(0.0625, 2024),
+  new TaxRate(0.0625, 2023),
+  new TaxRate(0.0625, 2022),
+  new TaxRate(0.0625, 2021),
+  new TaxRate(0.0625, 2020),
+];
+
+const texas = new State("Texas", texasTaxRates);
+
+const newYorkTaxRates = [
+  new TaxRate(0.04, 2025),
+  new TaxRate(0.04, 2024),
+  new TaxRate(0.04, 2023),
+  new TaxRate(0.04, 2022),
+  new TaxRate(0.04, 2021),
+  new TaxRate(0.04, 2020),
+];
+
+const newYork = new State("New York", newYorkTaxRates);
 ---
 
 <!doctype html>
