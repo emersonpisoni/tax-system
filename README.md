@@ -1,32 +1,24 @@
-# Astro Starter Kit: Basics
+# Why Astro?
 
-```sh
-npm create astro@latest -- --template basics
-```
+Astro is best-known for pioneering a new frontend architecture to reduce JavaScript overhead and complexity compared to other frameworks. If you need a website that loads fast and has great SEO, then Astro is for you. [Astro DOC](https://docs.astro.build/en/concepts/why-astro/)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- Island architecture
+- UI-agnostic
+- Server-first
+- 0 js, by default
 
-## 🚀 Project Structure
+VS Other frameworks (React, Next ...)
 
-Inside of your Astro project, you'll see the following folders and files:
+Focused on:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- Content-driven
+  - Because other frameworks were designed for building web application. Astro focus on content.
+- Server-first
+  - Other frameworks focus os CSR, because Astro focus on content, server-first is a better solution.
+- Island architecture ("Hydration")
+  - Only loads JS when requested, else it will be fully static..
+- Multi frameworks
+  - Astro enable using multi frameworks together, like React, Vue, Svelte, etc.
 
 ## 🧞 Commands
 
@@ -41,6 +33,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+# Published in
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+https://peaceful-wisp-eb773a.netlify.app/
