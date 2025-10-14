@@ -15,15 +15,12 @@ export default function PriceCalculator() {
 
       if (!product || !taxRate) return
 
-      const priceWithTax = product.price * (1 + taxRate);
+      const priceWithTax = product.getPriceByTax(taxRate);
       setFinalPrice(priceWithTax);
     } else {
       setFinalPrice(null);
     }
   }, [selectedProduct, selectedState, selectedYear]);
-
-  console.log(selectedState);
-
 
   return (
     <div>

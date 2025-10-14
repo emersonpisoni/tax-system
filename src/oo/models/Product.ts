@@ -6,4 +6,8 @@ export class Product {
     this.name = name;
     this.price = price;
   }
+
+  getPriceByTax(taxRate: number): number {
+    return this.price * (1 + taxRate);
+  }
 }
