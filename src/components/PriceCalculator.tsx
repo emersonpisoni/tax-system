@@ -22,6 +22,10 @@ export default function PriceCalculator() {
     }
   }, [selectedProduct, selectedState, selectedYear]);
 
+  useEffect(() => {
+    console.log("Component has hydrated");
+  }, []);
+
   return (
     <div>
       <h2>Price Calculator</h2>

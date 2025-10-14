@@ -20,6 +20,12 @@ Focused on:
 - Multi frameworks
   - Astro enable using multi frameworks together, like React, Vue, Svelte, etc.
 
+## Islands
+
+- client:load: Javascript is downloaded when the page that have the island is loaded.
+- client:visible: Javascript is downloaded when the island has appeared in screen.
+- client:idle: Javascript is downloaded when the browser becomes idle.
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -32,6 +38,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm run test`            | Run tests                                        |
 
 # Published in
 
